@@ -1,0 +1,1 @@
+ALTER TABLE "locations" ADD COLUMN "postal_code" text DEFAULT '' NOT NULL;

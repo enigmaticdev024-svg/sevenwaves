@@ -1,0 +1,7 @@
+export { SwLogo } from './SwLogo'
+export { BrazilianSpirit } from './BrazilianSpirit'
+export { InstagramIcon } from './InstagramIcon'
+export { AboutUsDivider } from './AboutUsDivider'
+export { WhereToFindDivider } from './WhereToFindDivider'
+export { ArrowIcon } from './ArrowIcon'
+export { StarIcon } from './StarIcon'

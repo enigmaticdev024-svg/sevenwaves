@@ -1,0 +1,316 @@
+{
+  "scrapedFrom": "https://sevenwaves.com",
+  "home": {
+    "heroImage": "/images/sw-home-01.webp",
+    "heroCopy": "New Year’s Eve in Brazil is a vibrant celebration marked by fireworks, music, and traditions performed for good luck. After midnight, revelers gather on the shoreline, ready to leap over SEVEN WAVES. Each wave — a wish for good fortune in the year ahead.",
+    "heroCta": "more about us",
+    "bottles": [
+      {
+        "name": "OAK",
+        "image": "/images/sw-oak.webp"
+      },
+      {
+        "name": "SILVER",
+        "image": "/images/sw-silver.webp"
+      },
+      {
+        "name": "UMBURANA",
+        "image": "/images/sw-umburana.webp"
+      }
+    ],
+    "bottlesHeading": "Genuine cachaça of brazil",
+    "bottlesCopy": "Seven Waves captures the spirit of Brazil in every drop—artisanal cachaça crafted with care by sustainability-focused producers.",
+    "bottlesCta": "Our cachaça",
+    "processIntro": "Seven Waves undergoes a careful artisanal process designed to enhance its aroma, flavor, and character—delivering a truly premium cachaça experience.",
+    "processOutro": "NOW THAT YOU KNOW HOW IT IS MADE, IT’S TIME TO TRY ONE OF OUR RECIPES.",
+    "steps": [
+      {
+        "title": "Planting",
+        "body": "All cachaça begins with sugarcane—ours is grown organically, free from pesticides or additives. This sustainable approach not only enriches the flavor, but helps protect the entire ecosystem it grows in.",
+        "image": "/images/sw-plantations.webp"
+      },
+      {
+        "title": "Harvesting",
+        "body": "We harvest our sugarcane only when nature says it’s ready—manually and mindfully, preserving both the quality of the cachaça and the land it comes from.",
+        "image": "/images/sw-harvesting.webp"
+      },
+      {
+        "title": "Grinding",
+        "body": "Once harvested, the sugarcane is milled to extract its fresh juice, known as garapa. The leftover stalks, called bagasse, are repurposed as biofuel or mulch—ensuring every part of the plant contributes to sustainable cachaça production.",
+        "image": "/images/sw-grinding.webp"
+      },
+      {
+        "title": "Fermetation",
+        "body": "Like beer and wine, cachaça begins with fermentation. In this stage, the sugarcane juice is combined with water and organic matter, and within 24 hours, it transforms into what’s known as “cane wine.” At Seven Waves, we rely on wild yeast native to our sugarcane fields, allowing the land and its microbes to shape a flavor that is distinct to each terroir.",
+        "image": "/images/sw-fermentation.webp"
+      },
+      {
+        "title": "Filtering",
+        "body": "The sugarcane juice is filtered and decanted to remove impurities. The result is called must.",
+        "image": "/images/sw-filtering.webp"
+      },
+      {
+        "title": "Distillation",
+        "body": "The cane wine is heated in a traditional copper still, known as an alembic. As it boils, the vapors rise, condense, and are cooled—concentrating the alcohol in the process.",
+        "image": "/images/sw-distillation.webp"
+      },
+      {
+        "title": "Resting",
+        "body": "Stored in wooden barrels, cachaça undergoes a required minimum aging of 90 days. At Seven Waves, we go far beyond that—resting our spirit for longer periods to develop greater complexity and smoothness. The flavor is further influenced by the choice of wood, barrel design, and aging time.",
+        "image": "/images/sw-resting.webp"
+      },
+      {
+        "title": "Bottling",
+        "body": "The final step is bottling. At this point, the cachaça is ready to be shipped and savored.",
+        "image": "/images/sw-bottling.webp"
+      }
+    ],
+    "featuredDrinks": [
+      {
+        "name": "Caipirinha",
+        "image": "/images/sw-caipirinha.webp"
+      },
+      {
+        "name": "Strawberry Basil Caipirinha",
+        "image": "/images/sw-strawberry.webp"
+      },
+      {
+        "name": "Floripa",
+        "image": "/images/sw-florianopolis.webp"
+      },
+      {
+        "name": "Brazilian Breeze",
+        "image": "/images/sw-brazilian.webp"
+      }
+    ],
+    "partners": [
+      {
+        "title": "Produto Orgânico Brasil",
+        "icon": null,
+        "image": "/images/selo-organico.png"
+      },
+      {
+        "title": "IBD",
+        "icon": null,
+        "image": "/images/selo-ibd.png"
+      },
+      {
+        "title": "SES - Selo de Envelhecimento Sustentável",
+        "icon": null,
+        "image": "/images/selo-ses.png"
+      }
+    ],
+    "partnersHeading": "Sustainability",
+    "seo": {
+      "title": "Seven Waves",
+      "description": "Genuine Cachaça Of Brazil"
+    }
+  },
+  "products": {
+    "products": [
+      {
+        "name": "OAK",
+        "slug": "oak",
+        "bottle": "/images/sw-oak.webp",
+        "description": "The cachaça is aged for 3 years in American oak barrels, widely used for the production of bourbon whiskey. Get ready for your palate to be enveloped by a velvety, woody sensation, with notes of vanilla and almonds.",
+        "recipeSuggestion": "Caipirinha and fruit shake.",
+        "tastingNotes": [
+          "Vanilla and almonds.",
+          "Sweet and Woody",
+          "40% Vol.",
+          "Aged in oak barrels",
+          "3 years"
+        ]
+      },
+      {
+        "name": "SILVER",
+        "slug": "silver",
+        "bottle": "/images/sw-silver.webp",
+        "description": "One of the most famous Brazilian cachaças, it has a well-balanced flavor with a mild spiciness. It is possible to feel a velvety touch on the palate with the sweetness of sugar cane. It can be considered the first option to enter the world of cachaças, starting with the classic caipirinha.",
+        "recipeSuggestion": "Caipirinha and fruit shake.",
+        "tastingNotes": [
+          "Crystal clear",
+          "Fruity and herbal",
+          "Citrus and Sweet",
+          "40% Vol.",
+          "Aged in Stainless Steel Barrels",
+          "18 months"
+        ]
+      },
+      {
+        "name": "UMBURANA",
+        "slug": "umburana",
+        "bottle": "/images/sw-umburana.webp",
+        "description": "Aged for 3 years, its name is in honor of the wood in its barrels. Umburana reduces the acidity of the cachaça, adding sweetness and smoothness, with notes of cinnamon, vanilla and spices. Perfect for tasting, its mild flavor that warms the body will transport you to the comfort of an autumn in the tropics.",
+        "recipeSuggestion": "Caipirinha and fruit shake.",
+        "tastingNotes": [
+          "Light golden, clear and bright",
+          "Cinnamon, vanilla and spices",
+          "Sweetish",
+          "40% Vol.",
+          "Aged in umburana barrels",
+          "3 years"
+        ]
+      },
+      {
+        "name": "CLASSIC",
+        "slug": "classic",
+        "bottle": "/images/BD6A0474-1.png",
+        "description": "Seven Waves Classic reflects Brazil’s cachaça legacy, crafted for those who appreciate timeless tradition. A staple at beaches and barbecues, it brings rustic character to any cocktail.",
+        "recipeSuggestion": "caipirinha",
+        "tastingNotes": [
+          "Crystal Clear",
+          "Fruity and herbal",
+          "Citrus and Sweet",
+          "40% Vol.",
+          "Aged in Jequitibá Barrels",
+          "Two years"
+        ]
+      }
+    ],
+    "seo": {
+      "title": "Our Cachaça - Seven Waves - Seven Waves",
+      "description": "Seven Waves undergoes a careful artisanal process designed to enhance its aroma, flavor, and character—delivering a truly premium cachaça experience."
+    }
+  },
+  "about": {
+    "headline": "Made where every day feels like a holiday, bringing the spirit of the party in every pour.",
+    "subheading": "Cachaça is a toast to the moment—a spirit born to be shared. just like the journey that led us here.",
+    "image": "/images/sw-aboutus.webp",
+    "body": [
+      "Andrea De Oliveira was born in Santos—a beachside city that’s not just known for its coastline, but also as one of Brazil’s oldest towns, home to some of the first cachaça distilleries and, according to some, the birthplace of the caipirinha.",
+      "Growing up in Brazil, cachaça was always part of the celebration—whether it was a family barbecue or a day at the beach with friends.",
+      "Later in life, after moving to Los Angeles, every trip back to Brazil came with requests to bring back a bottle (or three) of cachaça to her friends in the US.",
+      "Years later, while vacationing in Brazil with her husband, she stumbled upon something exciting: a new wave of small-batch, artisanal cachaças. These cachaças tasted nothing like the popular industrial ones from her youth. They brought new depth and complexity to the familiar spirit and felt like an invitation to explore the possibilities.",
+      "They dove headfirst into the world of cachaça distilleries—tasting, learning, and falling even more in love with the spirit. Friends back in LA couldn’t get enough, either. Their suitcases barely stood a chance.",
+      "Around that same time, a native Angeleno, Lisset Evans, was packing her bags— in search of an adventure in Brazil.",
+      "There, she found unforgettable moments and fell in love with the culture and rhythm of life in Brazil. Many of her fondest memories came with a caipirinha in hand.",
+      "Fast forward to 2021, and Andrea and Lisset became next-door neighbors. Cocktails by the pool turned into long conversations, shared stories, and eventually, a shared dream: to bring high-quality, organic cachaça to the U.S.",
+      "And so, Seven Waves was born— aiming to bring the spirit of togetherness and celebration experienced so vividly in Brazil.",
+      "The name is inspired by one of Brazil’s most magical traditions—New Year’s Eve. Fireworks light up the sky. Music fills the air. And after midnight, you head to the ocean, jumping over seven waves, wishing for luck in the year ahead.",
+      "Seven Waves captures that spirit. It’s artisanal cachaça, crafted sustainably, ready to bring the flavor and joy of Brazil to your glass.",
+      "So go ahead—pour yourself a drink. The journey’s just beginning."
+    ],
+    "seo": {
+      "title": "About Us - Seven Waves - Seven Waves",
+      "description": "Discover Seven Waves, an organic cachaça brand founded by women and rooted in sustainability."
+    }
+  },
+  "recipes": {
+    "heading": "Discover some of the best ways to celebrate with Seven Waves",
+    "recipes": [
+      {
+        "name": "Caipirinha",
+        "slug": "caipirinha",
+        "image": "/images/sw-caipirinha.webp",
+        "ingredients": "3/4 of a lime cut into wedges, with the pith removed\n\n2 tsp of superfine sugar or 3/4 oz simple syrup\n\n1.5 oz of Seven Waves Silver",
+        "instructions": "Muddle the lime and sugar in a glass. Add 1.5 oz of Seven Waves Silver cachaca. Add ice and stir to mix. Garnish with a lime wedge."
+      },
+      {
+        "name": "Strawberry Basil",
+        "slug": "strawberry-basil",
+        "image": "/images/sw-strawberry.webp",
+        "ingredients": "1 and ½ oz Seven Waves Silver Cachaça\n\n3 strawberries\n\n3 basil leaves\n\n¼ lime, cut into wedges\n\n1 tsp superfine sugar or 1/4 oz simple syrup",
+        "instructions": "Muddle the lime, strawberries, basil, and sugar in a shaker until well combined. Add ice and pour in Seven Waves Silver Cachaça. Shake vigorously, then strain into a rocks glass over fresh ice. Garnish with a strawberry or a basil leaf and enjoy!"
+      },
+      {
+        "name": "Floripa",
+        "slug": "floripa",
+        "image": "/images/sw-florianopolis.webp",
+        "ingredients": "1 and 1/2 oz Seven Waves Silver cachaça\n\n¾ oz lemon juice\n\n1/2 oz Aperol\n\n1/2 oz Passion Fruit Syrup\n\n3 drop Saline Solution 4:1",
+        "instructions": "Add Seven Waves Silver Cachaça, lemon juice, Aperol, passion fruit syrup,and saline solution to a shaker filled with ice. Shake vigorously until well chilled, then double strain into a chilled cocktail glass. Serve immediately and enjoy!"
+      },
+      {
+        "name": "Cucumber Jalapeño Caipirinha",
+        "slug": "cucumber-jalapeno-caipirinha",
+        "image": "/images/Cucumber-Jalapeno.png",
+        "ingredients": "1.5 oz Seven Waves Silver Cachaça\n\n2 slices of cucumber\n\n1 lime wedge\n\n2 slice of jalapeño\n\n1/4 oz agave nectar",
+        "instructions": "Muddle the jalapeño, lime, cucumber, and agave in a shaker until well combined. Add ice and pour in Seven Waves Silver cachaça. Shake thoroughly to blend the flavors. Strain into a rocks glass over fresh ice and garnish with a crisp cucumber wheel. Enjoy the perfect balance of heat and refreshment."
+      },
+      {
+        "name": "Brazilian Breeze",
+        "slug": "brazilian-breeze",
+        "image": "/images/sw-brazilian.webp",
+        "ingredients": "1.5 oz Seven Waves Silver Cachaça\n\n2 oz. Pineapple Juice\n\n1 oz Cranberry Juice",
+        "instructions": "Add pineapple juice and Seven Waves Silver Cachaça to a shaker filled with ice. Shake vigorously until well chilled, then strain into a highball glass. Gently top with cranberry juice for a layered effect. Garnish with an orange wedge for a bright, citrusy finish."
+      },
+      {
+        "name": "Blackberry Agave Caipirinha",
+        "slug": "blackberry-agave-caipirinha",
+        "image": "/images/Blackberry-Agave-Caipirinha.png",
+        "ingredients": "1.5 oz Seven Waves Silver Cachaça\n\n6 Blackberries\n\n1/2 oz Agave Nectar\n\n1/2 oz fresh lime juice\n\nSplash soda to top",
+        "instructions": "Gently muddle the blackberries and agave nectar in a shaker. Add ice, then pour in the cachaça and lime juice. Shake vigorously until well chilled. Strain into a rocks glass over fresh ice and top with soda. Garnish with a blackberry for a vibrant finish."
+      },
+      {
+        "name": "Coconut Batida",
+        "slug": "coconut-batida",
+        "image": "/images/Coconut-Batida.png",
+        "ingredients": "Serves 4 -\n\n1 can (13.5 fl ounces) full fat coconut milk\n\n1 can (14 ounces) sweet condensed milk\n\n6 ounces Seven Waves Silver cachaça\n\n3 cups ice\n\nShredded coconut for rim",
+        "instructions": "Add all ingredients to a blender and blend until smooth and creamy. Lightly brush the inside and outside rims of four glasses with coconut milk or water, then dip them in shredded coconut to coat. Pour the batida evenly into the prepared glasses and serve immediately."
+      },
+      {
+        "name": "Slice of Heaven",
+        "slug": "slice-of-heaven",
+        "image": "/images/Slice-of-Heaven.png",
+        "ingredients": "2 oz. cachaca\n\n1 oz. watermelon shrub\n\n1/2 fresh lime (cut into 4 wedges)\n\n1/2 oz. simple syrup",
+        "instructions": "Muddle the lime wedges in the base of a shaker. Add the remaining ingredients, shake with ice, and fine-strain into a chilled glass.\n\nWatermelon Shrub: Combine 1 cup fresh watermelon purée, 1 cup granulated sugar, and 1/2 cup white balsamic vinegar in a large glass jar. Cover and shake to combine. Let sit overnight, then fine-strain. Keep refrigerated for up to 2 weeks."
+      },
+      {
+        "name": "Pineapple Mint Caipirinha",
+        "slug": "pineapple-mint-caipirinha",
+        "image": "/images/Pineapple-Mint.png",
+        "ingredients": "1.5 oz Seven Waves Silver cachaça\n\n4 chunks of pineapple\n\n2 mint leaves\n\n1 tsp of superfine sugar or 1/4 oz simple syrup",
+        "instructions": "Muddle the pineapple, mint, and sugar in a shaker until well combined. Add ice and pour in Seven Waves Silver cachaça. Shake vigorously to blend the flavors, then strain into a rocks glass over fresh ice. Garnish with a sprig of mint and enjoy!"
+      },
+      {
+        "name": "Pom Reader",
+        "slug": "pom-reader",
+        "image": "/images/Pom-Reader.png",
+        "ingredients": "2 oz of silver cachaça\n\n3/4 oz lime juice\n\n3/4 oz pomegranate juice",
+        "instructions": "Fill a shaker halfway with ice. Shake and strain into a cocktail glass. Garnish with a lime wedge."
+      }
+    ],
+    "seo": {
+      "title": "Recipes - Seven Waves - Seven Waves",
+      "description": "It’s time to try Seven Waves cachaça in one of our cocktail recipes!"
+    }
+  },
+  "chrome": {
+    "nav": [
+      {
+        "label": "Our Cachaça",
+        "href": "/our-cachaca"
+      },
+      {
+        "label": "About Us",
+        "href": "/about-us"
+      },
+      {
+        "label": "Recipes",
+        "href": "/recipes"
+      },
+      {
+        "label": "Where to Find",
+        "href": "/where-to-find"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "social": [
+      {
+        "label": "TikTok",
+        "href": "https://www.tiktok.com/@sevenwavescachaca?_t=ZT-8vkfwFmyTUs&_r=1"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/sevenwavescachaca"
+      },
+      {
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@sevenwavescacha%C3%A7a"
+      }
+    ]
+  }
+}

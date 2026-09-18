@@ -1,0 +1,371 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   Seven Waves design tokens
+   Values transcribed verbatim from the WordPress theme's compiled
+   stylesheet (sevenwaves-wp/style.min.css, custom .sw-* tail).
+   ========================================================================= */
+
+@theme {
+  /* --- palette ------------------------------------------------------- */
+  --color-navy: #232e44;
+  --color-navy-alt: #222f44;
+  --color-cream: #ffecdc;
+  --color-amber: #eea33b;
+  --color-amber-alt: #eaa345;
+  --color-sky: #a6d5e1;
+  --color-sky-alt: #a7d5e0;
+  --color-teal: #008080;
+  --color-teal-bright: #009c90;
+  --color-tan: #baa58c;
+
+  /* faded repeated-wordmark colours on the product page */
+  --color-fade-oak: rgb(0 128 128 / 0.1);
+  --color-fade-silver: rgb(35 46 68 / 0.1);
+  --color-fade-umburana: rgb(255 236 220 / 0.1);
+
+  /* --- typography ---------------------------------------------------- */
+  --font-sans: var(--font-barlow), system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-stinger), var(--font-barlow), sans-serif;
+
+  /* --- breakpoints ---------------------------------------------------- */
+  /* The theme mixes Bootstrap's breakpoints with a hand-written 600px query. */
+  --breakpoint-xs: 36rem; /* 576px — Bootstrap's 575.98px boundary */
+  --breakpoint-mob: 37.5rem; /* 600px — the theme's own max-width query */
+}
+
+/* =========================================================================
+   Fluid type scale
+   Every heading in the theme uses calc(MIN + (MAX-MIN)*(100vw-320px)/1600),
+   which is linear from 320px to 1920px and then keeps growing. Reproduced
+   exactly, but clamped at the top so ultra-wide screens don't overshoot.
+   ========================================================================= */
+
+:root {
+  --fluid-h1: calc(30px + (48 - 30) * (100vw - 320px) / 1600);
+  --fluid-h2: calc(26px + (38 - 26) * (100vw - 320px) / 1600);
+  --fluid-h3: calc(24px + (28 - 24) * (100vw - 320px) / 1600);
+  --fluid-h4: calc(20px + (24 - 20) * (100vw - 320px) / 1600);
+  --fluid-h5: calc(18px + (20 - 18) * (100vw - 320px) / 1600);
+
+  --fluid-drink: calc(46px + (180 - 46) * (100vw - 320px) / 1600);
+  --fluid-drink-big: calc(46px + (106 - 46) * (100vw - 320px) / 1600);
+  --fluid-product: calc(48px + (180 - 48) * (100vw - 320px) / 1600);
+  --fluid-product-umburana: calc(30px + (180 - 48) * (100vw - 320px) / 1600);
+  --fluid-about-title: calc(32px + (48 - 32) * (100vw - 320px) / 1600);
+  --fluid-about-body: calc(18px + (20 - 18) * (100vw - 320px) / 1600);
+  --fluid-recipes-title: calc(18px + (26 - 18) * (100vw - 320px) / 1600);
+  --fluid-wtof-title: calc(24px + (32 - 24) * (100vw - 320px) / 1600);
+}
+
+/* =========================================================================
+   Base
+   ========================================================================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #fff;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    /* The theme sets `body * { color: #232e44 }`; sections override locally. */
+    color: var(--color-navy);
+    overflow-x: hidden;
+  }
+
+  /* Locks scrolling behind the age gate and the mobile menu. */
+  body.is-locked {
+    overflow: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: var(--fluid-h1);
+  }
+  h2 {
+    font-size: var(--fluid-h2);
+  }
+  h3 {
+    font-size: var(--fluid-h3);
+  }
+  h4 {
+    font-size: var(--fluid-h4);
+  }
+  h5 {
+    font-size: var(--fluid-h5);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul,
+  ol,
+  dl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  img,
+  svg {
+    display: block;
+  }
+}
+
+/* =========================================================================
+   Components
+   ========================================================================= */
+
+@layer components {
+  /* Fluid font-size helpers — apply the scale defined above. */
+  .fluid-h1 { font-size: var(--fluid-h1); }
+  .fluid-h2 { font-size: var(--fluid-h2); }
+  .fluid-h3 { font-size: var(--fluid-h3); }
+  .fluid-h4 { font-size: var(--fluid-h4); }
+  .fluid-h5 { font-size: var(--fluid-h5); }
+  .fluid-drink { font-size: var(--fluid-drink); }
+  .fluid-drink-big { font-size: var(--fluid-drink-big); }
+  .fluid-product { font-size: var(--fluid-product); }
+  .fluid-product-umburana { font-size: var(--fluid-product-umburana); }
+  .fluid-about-title { font-size: var(--fluid-about-title); }
+  .fluid-about-body { font-size: var(--fluid-about-body); }
+  .fluid-recipes-title { font-size: var(--fluid-recipes-title); }
+  .fluid-wtof-title { font-size: var(--fluid-wtof-title); }
+
+  /* The theme's signature section heading: display font, uppercase, wide
+     tracking. `.titulos` in the original. */
+  .sw-title {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1.625rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .sw-subtitle {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 2.8rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  /* Buttons — `.btn` in the original: no border, bold, uppercase, 1rem. */
+  .sw-btn {
+    display: inline-block;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+    padding: 0.5rem 1rem;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Home hero CTA: navy on cream, inverts to amber on hover. */
+  .sw-btn-primary {
+    background: var(--color-navy);
+    color: var(--color-cream);
+    padding: 0.5rem 1.5rem;
+    font-size: 1.25rem;
+  }
+  .sw-btn-primary:hover {
+    background: var(--color-amber);
+    color: var(--color-navy);
+  }
+
+  /* Bottles section CTA: outlined navy on amber, inverts on hover. */
+  .sw-btn-outline {
+    background: transparent;
+    border: 2px solid var(--color-navy);
+    color: var(--color-navy);
+    padding: 0.5rem 1.5rem;
+    font-size: 1.25rem;
+  }
+  .sw-btn-outline:hover {
+    background: var(--color-navy);
+    color: var(--color-amber);
+  }
+
+  /* Tasting-note bullets — a star glyph sits above each item. */
+  .sw-star-item {
+    background: url("/images/sw-star.webp") no-repeat 12px 0;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+}
+
+/* =========================================================================
+   Scroll reveal (replaces WOW.js + Animate.css)
+   WOW was initialised with { mobile: false }, so reveals only run at >=992px.
+   Below that, elements are simply visible.
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Hiding is scoped to `.js`, which is set by an inline script in the layout.
+   If JavaScript is disabled or fails to run, the class is never added and all
+   content renders normally rather than being stuck at opacity 0. */
+@media (min-width: 992px) {
+  .js [data-reveal] {
+    opacity: 0;
+    animation-fill-mode: both;
+    animation-duration: var(--reveal-duration, 1s);
+    animation-delay: var(--reveal-delay, 0ms);
+  }
+
+  .js [data-reveal][data-revealed="true"] {
+    opacity: 1;
+  }
+
+  .js [data-reveal="fadeIn"][data-revealed="true"] {
+    animation-name: sw-fade-in;
+  }
+  .js [data-reveal="fadeInUp"][data-revealed="true"] {
+    animation-name: sw-fade-in-up;
+  }
+  .js [data-reveal="fadeInDown"][data-revealed="true"] {
+    animation-name: sw-fade-in-down;
+  }
+  .js [data-reveal="fadeInLeft"][data-revealed="true"] {
+    animation-name: sw-fade-in-left;
+  }
+  .js [data-reveal="fadeInRight"][data-revealed="true"] {
+    animation-name: sw-fade-in-right;
+  }
+  .js [data-reveal="fadeInTopRight"][data-revealed="true"] {
+    animation-name: sw-fade-in-top-right;
+  }
+  .js [data-reveal="slideInUp"][data-revealed="true"] {
+    animation-name: sw-slide-in-up;
+  }
+  .js [data-reveal="bounceInUp"][data-revealed="true"] {
+    animation-name: sw-bounce-in-up;
+  }
+}
+
+@keyframes sw-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sw-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sw-fade-in-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sw-fade-in-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sw-fade-in-right {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sw-slide-in-up {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes sw-fade-in-top-right {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sw-bounce-in-up {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0) scaleY(5);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0) scaleY(0.9);
+  }
+  75% {
+    transform: translate3d(0, 10px, 0) scaleY(0.95);
+  }
+  90% {
+    transform: translate3d(0, -5px, 0) scaleY(0.985);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
