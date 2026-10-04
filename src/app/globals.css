@@ -82,6 +82,14 @@
     overflow: hidden;
   }
 
+  /* Admin fills the viewport and scrolls inside <main>. `overflow-x: hidden`
+     on body otherwise forces a second vertical bar beside that panel. */
+  html:has(.admin-shell),
+  html:has(.admin-shell) body {
+    height: 100%;
+    overflow: hidden;
+  }
+
   h1,
   h2,
   h3,

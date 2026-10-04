@@ -45,8 +45,8 @@ export default async function AdminLayout({
     .where(isNull(contactSubmissions.readAt))
 
   return (
-    <div className="flex h-dvh overflow-hidden bg-slate-100 text-slate-900">
-      <aside className="h-dvh w-60 shrink-0 overflow-y-auto bg-navy p-4 text-cream">
+    <div className="admin-shell fixed inset-0 flex overflow-hidden bg-slate-100 text-slate-900">
+      <aside className="w-60 shrink-0 overflow-y-auto bg-navy p-4 text-cream">
         <Link
           href="/admin"
           className="block w-fit"
@@ -95,7 +95,9 @@ export default async function AdminLayout({
         </div>
       </aside>
 
-      <main className="min-w-0 flex-1 overflow-auto p-8">{children}</main>
+      <main className="min-h-0 min-w-0 flex-1 overflow-x-hidden overflow-y-auto p-8">
+        {children}
+      </main>
     </div>
   )
 }
