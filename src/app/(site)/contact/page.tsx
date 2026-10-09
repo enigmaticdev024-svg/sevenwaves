@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-/** Reuses the cream `.sw-wtof` treatment, as the theme's contact page did. */
+/** Reuses the cream `.sw-wtof` treatment. Below 600px the section uses mobile.svg. */
 export default async function ContactPage() {
   const page = await getPage('contact')
   const { content } = page
@@ -34,7 +34,7 @@ export default async function ContactPage() {
         ])}
       />
 
-      <section className="bg-cream bg-[url('/images/sw-wtof-div.webp')] bg-no-repeat bg-[right_top] pb-12">
+      <section className="overflow-hidden bg-cream bg-[url('/images/sw-wtof-div.webp')] bg-no-repeat bg-[right_top] pb-12 max-mob:bg-[url('/images/mobile.svg')] max-mob:bg-[length:100%_auto] max-mob:bg-top">
         <Container className="mb-12">
           <h1 className="sw-title my-12 text-center">{content.heading}</h1>
           {content.intro && (
