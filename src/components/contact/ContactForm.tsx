@@ -145,7 +145,7 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-1 block cursor-pointer">
+      <label htmlFor={name} className="mb-1 block cursor-pointer max-mob:text-white">
         {label}
         {required && <span aria-hidden="true"> *</span>}
       </label>
