@@ -3,7 +3,14 @@
 import Image from 'next/image'
 import useEmblaCarousel from 'embla-carousel-react'
 import Fade from 'embla-carousel-fade'
-import { useCallback, useEffect, useState } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+} from 'react'
 import { CarouselControls } from '@/components/site/Carousel'
 import type { Product } from '@/lib/content'
 
@@ -16,9 +23,11 @@ import type { Product } from '@/lib/content'
  *   $('.secondary').slick({ fade: true, arrows: false, infinite: false })
  *
  * The two are kept in sync here by mirroring `select` events between the Embla
- * instances. The content slider sits behind the bottle slider via a large
- * negative top margin (-724px, -780px under 600px) and z-index -1, so the
- * bottle appears to stand on top of the coloured panel.
+ * instances. Other pages paint their background on the section, so it always
+ * starts under the header. This page is the only one that lays the coloured
+ * panel over the bottle block, so the panel is pulled up by the block's real
+ * height — a fixed distance leaves a white band whenever the title or bottle
+ * is taller than that distance.
  */
 export function ProductShowcase({
   products,
@@ -30,6 +39,28 @@ export function ProductShowcase({
   const [navRef, navApi] = useEmblaCarousel({ loop: false, align: 'center' })
   const [contentRef, contentApi] = useEmblaCarousel({ loop: false }, [Fade()])
   const [selected, setSelected] = useState(0)
+  const navBoxRef = useRef<HTMLDivElement>(null)
+  const [navHeight, setNavHeight] = useState(0)
+
+  // The coloured panel has to cover whatever height the title + bottle
+  // actually are. That height changes with the viewport, so measure it.
+  useLayoutEffect(() => {
+    const el = navBoxRef.current
+    if (!el) return
+    const update = () => {
+      const next = el.offsetHeight
+      setNavHeight((prev) => (prev === next ? prev : next))
+    }
+    update()
+    const observer = new ResizeObserver(update)
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    navApi?.reInit()
+    contentApi?.reInit()
+  }, [navHeight, navApi, contentApi])
 
   // Keep both sliders on the same index.
   const syncFromNav = useCallback(() => {
@@ -49,13 +80,16 @@ export function ProductShowcase({
   const canNext = selected < products.length - 1
 
   return (
-    <section className="relative">
+    <section
+      className="relative"
+      style={{ '--sw-nav-h': `${navHeight}px` } as CSSProperties}
+    >
       {/* --- bottle + wordmark slider (the "navigator") ------------------ */}
-      <div className="relative">
+      <div ref={navBoxRef} className="relative z-10">
         <div className="overflow-hidden" ref={navRef}>
           <div className="flex">
             {products.map((product) => (
-              <div key={product.id} className="min-w-0 flex-[0_0_100%]">
+              <div key={product.id} className="min-w-0 flex-[0_0_100%] overflow-hidden">
                 <ProductWordmark product={product} />
                 {product.bottle && (
                   <Image
@@ -82,12 +116,13 @@ export function ProductShowcase({
         />
       </div>
 
-      {/* --- description panel (the "secondary" fade slider) ------------- */}
-      <div className="relative -z-10 max-md:-mt-[780px] md:-mt-[724px]">
+      {/* Pulled up by the navigator's measured height, so the colour starts
+          at the header at every width. 72px keeps the copy below the arrows. */}
+      <div className="relative -z-10 -mt-[var(--sw-nav-h)]">
         <div className="overflow-hidden" ref={contentRef}>
-          <div className="flex">
+          <div className="flex items-stretch">
             {products.map((product) => (
-              <div key={product.id} className="min-w-0 flex-[0_0_100%]">
+              <div key={product.id} className="flex min-w-0 flex-[0_0_100%] flex-col overflow-hidden">
                 <ProductPanel
                   product={product}
                   recipeSuggestionLabel={recipeSuggestionLabel}
@@ -102,38 +137,50 @@ export function ProductShowcase({
 }
 
 /**
- * The oversized wordmark. The theme printed the name three times — faded,
- * solid, faded — to create a repeating band, except for UMBURANA which is long
- * enough that it printed twice at a smaller size and shifted left.
+ * The oversized wordmark. Desktop prints the name three times — faded, solid,
+ * faded. The solid copy is locked to the horizontal center of the slide; the
+ * faded copies hang off either side of it and are clipped by the slide, so a
+ * long name such as UMBURANA stays centered instead of being shifted left.
+ * Mobile prints the solid name once, also centered.
  */
 function ProductWordmark({ product }: { product: Product }) {
   const isLong = product.name.toUpperCase() === 'UMBURANA'
+  const size = isLong ? 'fluid-product-umburana' : 'fluid-product'
+  const name = product.name
 
   return (
     <>
-      {/* Desktop: repeated band */}
-      <p
-        className={[
-          'hidden whitespace-nowrap text-center font-display font-light uppercase lg:block',
-          isLong ? 'fluid-product-umburana -ml-[27%]' : 'fluid-product',
-        ].join(' ')}
-        style={{ color: product.titleFadeColor }}
+      <div
+        className={`relative hidden overflow-hidden font-display font-light uppercase lg:block ${size}`}
         aria-hidden="true"
       >
-        {product.name} <span style={{ color: product.titleColor }}>{product.name}</span>
-        {!isLong && ` ${product.name}`}
-      </p>
+        <span className="invisible block whitespace-nowrap text-center">{name}</span>
+        <span
+          className="absolute top-0 left-1/2 -translate-x-1/2 whitespace-nowrap"
+          style={{ color: product.titleColor }}
+        >
+          {name}
+          <span
+            className="absolute top-0 right-full mr-[0.25em] whitespace-nowrap"
+            style={{ color: product.titleFadeColor }}
+          >
+            {name}
+          </span>
+          <span
+            className="absolute top-0 left-full ml-[0.25em] whitespace-nowrap"
+            style={{ color: product.titleFadeColor }}
+          >
+            {name}
+          </span>
+        </span>
+      </div>
 
-      {/* Mobile: single, solid */}
       <p
-        className={[
-          'block whitespace-nowrap text-center font-display font-light uppercase lg:hidden my-8',
-          isLong ? 'fluid-product-umburana -ml-[65%]' : 'fluid-product',
-        ].join(' ')}
+        className={`my-8 block whitespace-nowrap text-center font-display font-light uppercase lg:hidden ${size}`}
         style={{ color: product.titleColor }}
         aria-hidden="true"
       >
-        {product.name}
+        {name}
       </p>
     </>
   )
@@ -148,7 +195,7 @@ function ProductPanel({
 }) {
   return (
     <div
-      className="relative min-h-[1420px] bg-contain bg-top bg-no-repeat md:min-h-[1060px]"
+      className="relative h-full flex-1 bg-contain bg-top bg-no-repeat pb-12 pt-[calc(var(--sw-nav-h)+72px)]"
       style={{
         backgroundColor: product.accentColor,
         backgroundImage: product.background
@@ -156,11 +203,11 @@ function ProductPanel({
           : undefined,
       }}
     >
-      <div className="absolute bottom-8 left-0 w-full px-4 md:left-1/2 md:-ml-[34.5%] md:w-auto md:px-0">
+      <div className="w-full px-4">
         <div className="mx-auto w-full max-w-[1320px] px-3">
           <h2 className="sr-only">{product.name}</h2>
 
-          <div className="flex flex-wrap pt-20">
+          <div className="flex flex-wrap">
             <div className="w-full text-start lg:w-1/2">
               <p className="text-lg">{product.description}</p>
 
